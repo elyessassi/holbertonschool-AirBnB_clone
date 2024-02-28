@@ -28,4 +28,5 @@ class testcases(unittest.TestCase):
     def testcase3(self):
         """testing __str__"""
         test1 = BaseModel()
-        self.assertIsInstance(test1.__str__(), str)
+        string = str(f"[{test1.__class__.__name__}] ({test1.id}) {test1.__dict__}")
+        self.assertEqual(test1.__str__(), string)
