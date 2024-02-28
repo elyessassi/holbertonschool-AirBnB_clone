@@ -10,5 +10,7 @@ class testcases(unittest.TestCase):
     def testcase1(self):
         """testing save"""
         test1 = BaseModel()
+        old = test1.updated_at
         test1.save()
-        self.assertTrue(test1.updated_at != test1.created_at)
+        new = test1.updated_at
+        self.assertTrue(old != new)
