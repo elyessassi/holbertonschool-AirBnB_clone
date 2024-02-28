@@ -6,11 +6,21 @@ from datetime import datetime
 
 
 class BaseModel:
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """initialise the id and the created at and updated at dates"""
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+        if (kwargs is not None):
+            format = "%Y-%m-%dT%H:%M:%S.%f"
+            try:
+                self.id = kwargs["id"]
+                x = datetime.strptime(kwargs["created_at"], format)
+                y = datetime.strptime(kwargs["updated_at"], format)
+                self.created_at = x
+                self.updated_at = y
+            except KeyError:
+                pass
 
     def __str__(self):
         """method that displays instance attributes in a user friendly way"""
