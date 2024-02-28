@@ -24,3 +24,8 @@ class testcases(unittest.TestCase):
         self.assertAlmostEqual(dictionnary["created_at"], test1.created_at)
         self.assertAlmostEqual(dictionnary["updated_at"], test1.updated_at)
         self.assertAlmostEqual(dictionnary["__class__"], x)
+
+    def testcase3(self):
+        """testing __str__"""
+        test1 = BaseModel()
+        self.assertIsInstance(test1.__str__(), str)
