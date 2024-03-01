@@ -8,7 +8,7 @@ from models.__init__ import storage
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
-        """initialise the id and the created at and updated at dates"""
+        """initialise the id and the created_at and updated_at dates"""
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
@@ -22,6 +22,7 @@ class BaseModel:
                 self.updated_at = y
             except KeyError:
                 pass
+        storage.new(self)
 
     def __str__(self):
         """method that displays instance attributes in a user friendly way"""
@@ -29,7 +30,7 @@ class BaseModel:
 
     def save(self):
         """method that updates update_at instance attribute"""
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.isoformat(datetime.now())
         storage.save()
 
     def to_dict(self):
