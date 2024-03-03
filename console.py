@@ -14,6 +14,7 @@ class HBNBCommand(cmd.Cmd):
         return True
     
     def emptyline(self):
+        """ignore the default behaviour of printing last command"""
         pass
     
 
