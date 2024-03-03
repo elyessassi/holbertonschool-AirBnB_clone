@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""testing cases ( basemodel )"""
+"""testing cases ( state )"""
 
 from models.state import State
 import unittest
