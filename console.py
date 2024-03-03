@@ -34,7 +34,6 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             x = eval(args)
-            print(type(x))
             x.save()
             print(x.id)
     
