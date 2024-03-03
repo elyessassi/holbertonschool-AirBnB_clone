@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""testing cases ( city )"""
+"""testing cases ( place )"""
 
 from models.place import Place
 import unittest
