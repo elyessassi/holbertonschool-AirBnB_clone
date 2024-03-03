@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Cmd class file"""
 import cmd
 
 class HBNBCommand(cmd.Cmd):
+    """Cmd class"""
     prompt = "(hbnb) "
 
     def do_quit(self, args):
