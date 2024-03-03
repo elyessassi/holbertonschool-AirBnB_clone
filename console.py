@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
         elif args not in classnames:
             print("** class doesn't exist **")
         else:
-            x = eval(args())
+            x = eval(args)
             x.save()
             print(x.id)
     
@@ -105,19 +105,18 @@ class HBNBCommand(cmd.Cmd):
             x = False
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
+                    x = True
                     break
             if x == False:
                 print("** no instance found **")
         elif len(mylist) == 3:
             print("** value missing **")
         else:
-            x = True
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
                     dictionary[key].mylist[2] == list[3]
             storage.save()
-            if x == False:
-                print("** no instance found **")
+
 
 
 
