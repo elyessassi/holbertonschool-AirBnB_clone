@@ -28,9 +28,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif args != "BaseModel":
             print("** class doesn't exist **")
-        x = BaseModel()
-        x.save()
-        print(x.id)
+        else:
+            x = BaseModel()
+            x.save()
+            print(x.id)
     
     def do_show(self, args):
         """print the string representation of an object based on the class name and id"""
