@@ -33,8 +33,8 @@ class HBNBCommand(cmd.Cmd):
         elif args not in classnames:
             print("** class doesn't exist **")
         else:
-            x = eval(args)
-            x.save()
+            x = eval(args)()
+            storage.save()
             print(x.id)
     
     def do_show(self, args):
