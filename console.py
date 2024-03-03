@@ -30,6 +30,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         x = BaseModel()
         x.save()
+        print(x.id)
     
     def do_show(self, args):
         """print the string representation of an object based on the class name and id"""
