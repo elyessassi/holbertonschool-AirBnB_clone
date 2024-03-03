@@ -3,7 +3,7 @@
 
 import uuid
 from datetime import datetime
-from models.__init__ import storage
+from models import storage
 
 
 class BaseModel:
@@ -30,12 +30,12 @@ class BaseModel:
 
     def save(self):
         """method that updates update_at instance attribute"""
-        self.updated_at = datetime.isoformat(datetime.now())
+        self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
         """show the instance attributes and class of an instance"""
-        directory = self.__dict__
+        directory = self.__dict__.copy()
         directory["__class__"] = self.__class__.__name__
         directory["created_at"] = datetime.isoformat(directory["created_at"])
         directory["updated_at"] = datetime.isoformat(directory["updated_at"])
