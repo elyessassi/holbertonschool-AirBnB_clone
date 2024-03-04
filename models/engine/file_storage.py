@@ -21,9 +21,6 @@ class FileStorage():
         """save __objects to JSON file"""
         with open(self.__file_path, "w") as f:
             for key ,value in self.__objects.items():
-                if isinstance(value, dict):
-                    self.__objects[key] = value
-                else:
                     self.__objects[key] = value.to_dict() 
             json.dump(self.__objects, f)
 
