@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
                         formatedval = int(mylist[2])
                     if isinstance (mylist[3], float):
                         formatedval = float(mylist[2])
-                    dictionary[key].keyname == formatedval
+                    dictionary[key].eval(keyname) == formatedval
                     x = True
             storage.save()
             if x == False:
