@@ -18,16 +18,25 @@
 ### command
 
 		create: Create a new object.
+
 		show: Display details of a specific object.
+
 		destroy: Delete an object.
+
 		update: Update attributes of an object.
+
 		all: List all objects of a certain type.
 
 ### syntaxes:
 
 		create <class name> 
+
 		show <class name> <id>
+
 		destroy <class name> <id>
+
 		update <class name> <id> <attribute name> "<attribute value>"
+
 		all   or   all <class name>
+		
 
