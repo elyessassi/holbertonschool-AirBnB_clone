@@ -44,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
     
     def do_show(self, args):
         """print the string representation of an object based on the class name and id"""
-        mylist = args.mylistlit()
+        mylist = args.split()
         if args == "":
             print("** class name missing **")
         elif mylist[0] not in classnames:
@@ -61,7 +61,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, args):
         """Delete an instance based on the class name and id"""
-        mylist = args.mylistlit()
+        mylist = args.split()
         if args == "":
             print("** class name missing **")
         elif mylist[0] not in classnames:
@@ -90,31 +90,33 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             for key in dictionary.keys():
-                classname, classid = key.mylistlit(".")
+                classname, classid = key.split(".")
                 if classname == args:
                     print(dictionary[key])
     
     def do_update(self, args):
         """Update an instance based on the class name and id by adding or updating attribute"""
         mylist = args.split()
+        dictionary = storage.all()
         if args == "":
             print("** class name missing **")
         elif mylist[0] not in classnames:
             print("** class doesn't exist **")
-        elif len(mylist) < 2:
+        elif len(mylist) == 1:
             print("** instance id missing **")
-        elif len(mylist) < 3:
+        elif len(mylist) == 2:
             print("** attribute name missing **")
-        elif len(mylist) < 4:
+        elif len(mylist) == 3:
             print("** value missing **")
         else:
-            key = f"{mylist[0]}.{mylist[1]}"
-            obj = storage.all()
-            if key in obj:
-                obj[key].__dict__[mylist[2]] = mylist[3]
-                storage.save()
-            else:
-                print("** no instance found **")
+            x = False
+            for key in dictionary.keys():
+                if key == f"{mylist[0]}.{mylist[1]}":
+                    dictionary[key].mylist[2] == mylist[3]
+                    x = True
+            storage.save()
+            if x == False:
+                print("** instance id missing **")
 
 
 
