@@ -4,6 +4,8 @@
 from models.base_model import BaseModel
 from models import storage
 import unittest
+import os
+import models
 
 
 class testcases(unittest.TestCase):
@@ -12,10 +14,10 @@ class testcases(unittest.TestCase):
         """testing save"""
         test1 = BaseModel()
         old = test1.updated_at
-        oldstorage = storage.all().copy()
         test1.save()
         new = test1.updated_at
         self.assertTrue(old != new)
+        self.assertTrue(os.path.exists(models.storage.__file_path))
 
 
     def testcase2(self):
