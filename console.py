@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
         elif mylist[0] not in classnames:
             print("** class doesn't exist **")
         elif len(mylist) == 1:
-            print("** no instance found **")
+            print("** instance id missing **")
         elif len(mylist) == 2:
             print("** attribute name missing **")
         elif len(mylist) == 3:
@@ -118,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
                     x = True
             storage.save()
             if x == False:
-                print("** instance id missing **")
+                print("** no instance found **")
 
     def do_testing(self, args):
         x = storage.all()
