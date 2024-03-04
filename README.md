@@ -24,6 +24,7 @@
 		all: List all objects of a certain type.
 
 	   	### syntaxes:
+		
 		create <class name> 
 		show <class name> <id>
 		destroy <class name> <id>
