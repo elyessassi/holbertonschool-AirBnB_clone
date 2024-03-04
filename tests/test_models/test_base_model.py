@@ -2,6 +2,7 @@
 """testing cases ( basemodel )"""
 
 from models.base_model import BaseModel
+from models import storage
 import unittest
 
 
@@ -11,9 +12,12 @@ class testcases(unittest.TestCase):
         """testing save"""
         test1 = BaseModel()
         old = test1.updated_at
+        oldstorage = storage.all().copy
         test1.save()
         new = test1.updated_at
+        newstorage = storage.all().copy
         self.assertTrue(old != new)
+        self.assertTrue(oldstorage != newstorage)
 
     def testcase2(self):
         """testing __dict__"""
