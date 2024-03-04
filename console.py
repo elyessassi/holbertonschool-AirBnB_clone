@@ -112,8 +112,14 @@ class HBNBCommand(cmd.Cmd):
             x = False
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
-                    z = mylist[2]
-                    dictionary[key].z == mylist[3]
+                    keyname = str(mylist[2])
+                    if isinstance (mylist[3], str):
+                        formatedval = str(mylist[2])
+                    if isinstance (mylist[3], int):
+                        formatedval = int(mylist[2])
+                    if isinstance (mylist[3], float):
+                        formatedval = float(mylist[2])
+                    dictionary[key].keyname == formatedval
                     x = True
             storage.save()
             if x == False:
