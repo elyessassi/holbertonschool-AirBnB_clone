@@ -7,15 +7,15 @@
 
 # description of the command interpreter
 
-	## how to start it:
+## how to start it:
 		there are 2 ways to start the command interpreter:
 			./console.py
 			or
 			python3 console.py
 		
-	## how to use it:
+## how to use it:
 		
-		### command
+### command
 
 		create: Create a new object.
 		show: Display details of a specific object.
