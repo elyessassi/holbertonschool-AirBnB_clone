@@ -12,10 +12,10 @@ class testcases(unittest.TestCase):
         """testing save"""
         test1 = BaseModel()
         old = test1.updated_at
-        oldstorage = storage.all().copy
+        oldstorage = storage.all().copy()
         test1.save()
         new = test1.updated_at
-        newstorage = storage.all().copy
+        newstorage = storage.all().copy()
         self.assertTrue(old != new)
         self.assertTrue(oldstorage != newstorage)
 
