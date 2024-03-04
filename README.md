@@ -23,8 +23,7 @@
 		update: Update attributes of an object.
 		all: List all objects of a certain type.
 
-	    ### syntaxes:
-		
+	   	### syntaxes:
 		create <class name> 
 		show <class name> <id>
 		destroy <class name> <id>
