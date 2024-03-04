@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
         elif mylist[0] not in classnames:
             print("** class doesn't exist **")
         elif len(mylist) == 1:
-            print("** instance id missing **")
+            print("** no instance found **")
         elif len(mylist) == 2:
             print("** attribute name missing **")
         elif len(mylist) == 3:
