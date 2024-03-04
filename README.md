@@ -1,4 +1,4 @@
-# holbertonschool-AirBnB_clone
+<h1 align="center">Holberton School AirBnB clone - The console</h1>
 
 # description of the project
 
@@ -24,7 +24,7 @@
 		all: List all objects of a certain type.
 
 	   	### syntaxes:
-		
+
 		create <class name> 
 		show <class name> <id>
 		destroy <class name> <id>
