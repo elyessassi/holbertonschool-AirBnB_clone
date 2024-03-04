@@ -5,8 +5,8 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-	"""user class file"""
-	email = ""
-	password = ""
-	first_name = ""
-	last_name = ""
+    """user class file"""
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
