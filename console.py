@@ -112,7 +112,10 @@ class HBNBCommand(cmd.Cmd):
             x = False
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
-                    dictionary[key] = {mylist[2]:mylist[3]}
+                    if (mylist[3].isdigit()) == True:
+                        dictionary[key].__dict__.update({mylist[2]:eval(mylist[3])})
+                    elif (mylist[3].isdigit()) != True:
+                        dictionary[key].__dict__.update({mylist[2]:str(mylist[3])})
                     x = True
             storage.save()
             if x == False:
