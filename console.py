@@ -38,9 +38,8 @@ class HBNBCommand(cmd.Cmd):
         elif args not in classnames:
             print("** class doesn't exist **")
         else:
-            x = eval(args)()
+            print(eval(args)().id)
             storage.save()
-            print(x.id)
     
     def do_show(self, args):
         """print the string representation of an object based on the class name and id"""
@@ -113,22 +112,17 @@ class HBNBCommand(cmd.Cmd):
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
                     if mylist[3].isdigit():
-                        dictionary[key].update({mylist[2]:eval(mylist[3])})
+                        dictionary[key].__dict__.update({mylist[2]:eval(mylist[3])})
                     else:
-                        dictionary[key].update({mylist[2]:str(mylist[3])})
+                        dictionary[key].__dict__.update({mylist[2]:str(mylist[3])})
                     x = True
             storage.save()
             if x == False:
                 print("** instance id missing **")
 
-
-
-
-
-    
-
-
-        
+    def do_testing(self, args):
+        x = storage.all()
+        print(x)
 
     
 
