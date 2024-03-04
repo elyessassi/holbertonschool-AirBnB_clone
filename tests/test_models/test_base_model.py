@@ -19,11 +19,12 @@ class testcases(unittest.TestCase):
         """testing __dict__"""
         test1 = BaseModel()
         x = test1.__class__.__name__
-        dictionnary = test1.to_dict()
+        dictionnary = test1.__dict__.copy()
+        testdictionnary = test1.to_dict()
         self.assertAlmostEqual(dictionnary["id"], test1.id)
         self.assertAlmostEqual(dictionnary["created_at"], test1.created_at)
         self.assertAlmostEqual(dictionnary["updated_at"], test1.updated_at)
-        self.assertAlmostEqual(dictionnary["__class__"], x)
+        self.assertAlmostEqual(testdictionnary["__class__"], x)
 
     def testcase3(self):
         """testing __str__"""
