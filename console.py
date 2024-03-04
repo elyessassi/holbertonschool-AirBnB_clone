@@ -96,8 +96,7 @@ class HBNBCommand(cmd.Cmd):
     
     def do_update(self, args):
         """Update an instance based on the class name and id by adding or updating attribute"""
-        mylist = args.mylistlit()
-        dictionary = storage.all()
+        mylist = args.split()
         if args == "":
             print("** class name missing **")
         elif mylist[0] not in classnames:
