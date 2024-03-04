@@ -16,7 +16,7 @@ class testcases(unittest.TestCase):
         test1.save()
         new = test1.updated_at
         self.assertTrue(old != new)
-        self.assertNotAlmostEqual(oldstorage, test1.__dict__)
+        self.assertDictEqual(oldstorage, test1.__dict__)
 
     def testcase2(self):
         """testing __dict__"""
