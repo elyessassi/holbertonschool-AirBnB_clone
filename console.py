@@ -53,13 +53,10 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             x = False
-            dictionary = storage.all().copy()
-            for key in dictionary.keys():
-                if key == f"{mylist[0]}.{mylist[1]}":
-                    print(dictionary[key])
-                    x = True
-                    break
-            if (x == False):
+            dictionary = storage.all()
+            if f"{mylist[0]}.{mylist[1]}" in dictionary:
+                print(dictionary[f"{mylist[0]}.{mylist[1]}"])
+            else:
                 print("** no instance found **")
 
     def do_destroy(self, args):
