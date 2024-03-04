@@ -2,7 +2,8 @@
 
 # description of the project
 
-	this project aims to create a console that enables users to manipulate classes
+	this project aims to create a command line interpreter that gives the users the ability to create and manipulate objects and store it in a database and comeback to it later
+	the command line works in both interactive and non-interactive modes
 	(create, delete, update, etc)
 
 # description of the command interpreter
@@ -38,5 +39,5 @@
 		update <class name> <id> <attribute name> "<attribute value>"
 
 		all   or   all <class name>
-		
+
 
