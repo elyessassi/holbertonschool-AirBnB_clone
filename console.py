@@ -12,7 +12,7 @@ from models.review import Review
 from models.amenity import Amenity
 
 
-classnames = ["BaseModel", "User"]
+classnames = ["BaseModel", "User"٫ "Review", "City", "Place","State", "Amenity"]
 
 class HBNBCommand(cmd.Cmd):
     """Cmd class"""
