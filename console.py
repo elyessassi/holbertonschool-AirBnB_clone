@@ -12,25 +12,28 @@ from models.review import Review
 from models.amenity import Amenity
 
 
-classnames = ["BaseModel", "User", "Review", "City", "Place","State", "Amenity"]
+classnames = ["BaseModel", "User", "Review",
+              "City", "Place", "State", "Amenity"]
+
 
 class HBNBCommand(cmd.Cmd):
     """Cmd class"""
+
     prompt = "(hbnb) "
 
     def do_quit(self, args):
         """Quit command to exit the program"""
         return True
-    
+
     def do_EOF(self, args):
         """press EOF key to exit program"""
         print("")
         return True
-    
+
     def emptyline(self):
         """ignore the default behaviour of printing last command"""
         pass
-    
+
     def do_create(self, args):
         """creates an instance and save it to JSON file"""
         if args == "":
@@ -40,9 +43,10 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(eval(args)().id)
             storage.save()
-    
+
     def do_show(self, args):
-        """print the string representation of an object based on the class name and id"""
+        """print the string representation of
+          an object based on the class name and id"""
         mylist = args.split()
         if args == "":
             print("** class name missing **")
@@ -76,11 +80,12 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                     x = True
                     break
-            if (x == False):
+            if x is False:
                 print("** no instance found **")
-        
+
     def do_all(self, args):
-        """Print all string representation of all instances based or not on the class name"""
+        """Print all string representation
+        of all instances based or not on the class name"""
         dictionary = storage.all()
         if args == "":
             for key in dictionary.keys():
@@ -92,9 +97,10 @@ class HBNBCommand(cmd.Cmd):
                 classname, classid = key.split(".")
                 if classname == args:
                     print(dictionary[key])
-    
+
     def do_update(self, args):
-        """Update an instance based on the class name and id by adding or updating attribute"""
+        """Update an instance based on
+        the class name and id by adding or updating attribute"""
         mylist = args.split()
         dictionary = storage.all()
         if args == "":
@@ -111,20 +117,21 @@ class HBNBCommand(cmd.Cmd):
             x = False
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
+                    y = eval(mylist[3])
+                    z = str(mylist[3])
                     if mylist[3].isdigit():
-                        dictionary[key].__dict__.update({mylist[2]:eval(mylist[3])})
+                        dictionary[key].__dict__.update({mylist[2]: y})
                     else:
-                        dictionary[key].__dict__.update({mylist[2]:str(mylist[3])})
+                        dictionary[key].__dict__.update({mylist[2]: z})
                     x = True
             storage.save()
-            if x == False:
+            if x is False:
                 print("** no instance found **")
 
     def do_testing(self, args):
         x = storage.all()
         print(x)
 
-    
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
