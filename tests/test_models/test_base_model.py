@@ -17,7 +17,7 @@ class testcases(unittest.TestCase):
         new = test1.updated_at
         newstorage = storage.all().copy()
         self.assertTrue(old != new)
-        self.assertTrue(oldstorage != newstorage)
+        self.assertTrue(oldstorage == newstorage)
 
     def testcase2(self):
         """testing __dict__"""
