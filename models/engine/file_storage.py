@@ -5,7 +5,7 @@ import json
 import os
 
 
-class FileStorage():
+class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
@@ -35,7 +35,7 @@ class FileStorage():
         from models.state import State
         from models.review import Review
         from models.amenity import Amenity
-        
+
         if os.path.isfile(self.__file_path) is True:
             with open(self.__file_path, "r") as f:
                 data = json.load(f)
@@ -43,5 +43,3 @@ class FileStorage():
                     theclassname, theid = key.split(".")
                     classname = eval(theclassname)
                     self.__objects[key] = classname(**value)
-            
-
