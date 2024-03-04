@@ -95,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
                     print(dictionary[key])
     
     def do_update(self, args):
-        """Update an instance based on the class name and id by adding or updating attribute"""
+        """Update an instance based on the class name and id by adding or updating attribute """
         mylist = args.split()
         dictionary = storage.all()
         if args == "":
