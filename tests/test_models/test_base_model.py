@@ -17,7 +17,7 @@ class testcases(unittest.TestCase):
         test1.save()
         new = test1.updated_at
         self.assertTrue(old != new)
-        self.assertTrue(os.path.exists(models.storage.__file_path))
+        self.assertTrue(os.path.exists(models.storage._FileStorage__file_path))
 
 
     def testcase2(self):
