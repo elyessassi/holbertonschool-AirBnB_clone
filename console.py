@@ -85,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
         
     def do_all(self, args):
         """Print all string representation of all instances based or not on the class name"""
-        dictionary = storage.all().copy()
+        dictionary = storage.all()
         if args == "":
             for key in dictionary.keys():
                 print(dictionary[key])
