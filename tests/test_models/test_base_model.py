@@ -17,7 +17,7 @@ class testcases(unittest.TestCase):
         new = test1.updated_at
         newstorage = storage.all().copy()
         self.assertTrue(old != new)
-        self.assertNotAlmostEqual(oldstorage ,newstorage)
+        self.assertNotAlmostEqual(len(oldstorage) ,len(newstorage))
 
     def testcase2(self):
         """testing __dict__"""
