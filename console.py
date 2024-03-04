@@ -112,7 +112,7 @@ class HBNBCommand(cmd.Cmd):
             x = False
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
-                    dictionary[key].mylist[2] == mylist[3]
+                    dictionary[key].__dict__[mylist[2]] == mylist[3]
                     x = True
             storage.save()
             if x == False:
