@@ -95,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
                     print(dictionary[key])
     
     def do_update(self, args):
-        """Update an instance based on the class name and id by adding or updating attribute  """
+        """Update an instance based on the class name and id by adding or updating attribute"""
         mylist = args.split()
         dictionary = storage.all()
         if args == "":
@@ -112,14 +112,7 @@ class HBNBCommand(cmd.Cmd):
             x = False
             for key in dictionary.keys():
                 if key == f"{mylist[0]}.{mylist[1]}":
-                    keyname = str(mylist[2])
-                    if isinstance (mylist[3], str):
-                        formatedval = str(mylist[2])
-                    if isinstance (mylist[3], int):
-                        formatedval = int(mylist[2])
-                    if isinstance (mylist[3], float):
-                        formatedval = float(mylist[2])
-                    dictionary[key].eval(keyname) == formatedval
+                    dictionary[key] = {mylist[2]:mylist[3]}
                     x = True
             storage.save()
             if x == False:
