@@ -22,7 +22,7 @@ class FileStorage():
         objs = self.__objects
         tempdict = {}
         for key, value in objs.items():
-            tempdict[key] = value.to_dict
+            tempdict[key] = value.to_dict()
         with open(self.__file_path, "w") as f:
             json.dump(tempdict, f)
 
